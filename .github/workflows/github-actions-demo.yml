@@ -1,0 +1,16 @@
+name: Unit Test Check
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Unit-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: set up node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - name: run install
+        run: yarn install
+      - name: run test
+        run: yarn test
